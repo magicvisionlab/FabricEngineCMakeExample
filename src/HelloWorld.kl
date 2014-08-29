@@ -1,0 +1,8 @@
+/*
+ * Fabric Engine 1.12.0
+ * HelloWorld EDK Sample
+ *
+ * Copyright 2010-2014 Fabric Software Inc. All rights reserved.
+ */
+
+function String GetHelloWorldString() = "GetHelloWorldString";
