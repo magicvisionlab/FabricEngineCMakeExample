@@ -1,11 +1,12 @@
+cmake_minimum_required(VERSION 2.8)
 PROJECT(HelloWorld CXX C)
 
 SET(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 INCLUDE(cmake/FabricEngineModule.cmake)
 
-SET(MODULE_SPEC "src/HelloWorld.fpm.json")
-SET(MODULE_CPP_SOURCES "src/HelloWorld.cpp")
-SET(MODULE_KL_SOURCES "src/HelloWorld.kl")
+SET(MODULE_LIBRARIES "")
 
-add_fabricengine_extension("HelloWorld")
+extension_define("HelloWorld" "src/HelloWorld.fpm.json")
+extension_sources(CPP "src/HelloWorld.cpp" KL "src/HelloWorld.kl")
+extension_build(${MODULE_LIBRARIES})
