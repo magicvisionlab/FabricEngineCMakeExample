@@ -2,10 +2,10 @@
 
 # Some Globals, which need to be adapted to the FabricEngine Version (maybe we can autodetect them as well ?)
 SET(FABRIC_VERSION_MAJ "1")
-SET(FABRIC_VERSION_MIN  "12")
+SET(FABRIC_VERSION_MIN  "13")
 SET(FABRIC_VERSION_REV  "0")
-SET(FABRIC_VERSION_NO_SUFFIX  "1.12.0")
-SET(FABRIC_VERSION  "1.12.0")
+SET(FABRIC_VERSION_NO_SUFFIX  "1.13.0")
+SET(FABRIC_VERSION  "1.13.0")
 SET(FABRIC_VERSION_SUFFIX  "")
 SET(FABRIC_DESC  "Dedicated Platform for High-Performance Graphics Applications")
 
@@ -75,9 +75,10 @@ IF(CMAKE_BUILD_TYPE MATCHES RELEASE)
 ENDIF(CMAKE_BUILD_TYPE MATCHES RELEASE)
 	
 IF(FABRIC_BUILD_OS STREQUAL "Darwin")
-	SET(FABRIC_MODULE_CFLAGS "${FABRIC_MODULE_CFLAGS} -Wall -fvisibility=hidden -mmacosx-version-min=10.7")
+	#SET(FABRIC_MODULE_CFLAGS "${FABRIC_MODULE_CFLAGS} -Wall -fvisibility=hidden -mmacosx-version-min=10.7")
+	SET(FABRIC_MODULE_CFLAGS "${FABRIC_MODULE_CFLAGS} -Wall -fvisibility=hidden")
 
-	SET(FABRIC_MODULE_LINKFLAGS "${FABRIC_MODULE_LINKFLAGS} -w -mmacosx-version-min=10.7")
+	#SET(FABRIC_MODULE_LINKFLAGS "${FABRIC_MODULE_LINKFLAGS} -w -mmacosx-version-min=10.7")
 
 	IF(FABRIC_BUILD_ARCH STREQUAL "x86_64")
 		SET(FABRIC_MODULE_CFLAGS "${FABRIC_MODULE_CFLAGS} -arch x86_64")
